@@ -23,7 +23,7 @@ const SignIn = () => {
                     navigate('/user')
                }
             } else{
-                alert("ERROR...!");
+                alert(res.data.Error);
             }
         }).catch(err => console.log(err))
     }

@@ -5,7 +5,7 @@ const SignIn = () => {
     <div className="bg-blue-500 w-full h-screen">
         <div className="container px-32 py-20 ">
             <div className="rounded-xl mx-40 p-20 mt-20 bg-white w-full">
-                <p className="text-3xl font-semibold py-4">SignUp</p>
+                <p className="text-3xl font-semibold py-4">SignIn</p>
                 <hr className="pb-6" />
 
                 <form>
@@ -24,7 +24,7 @@ const SignIn = () => {
 
                 <p>Dont have an Account ? 
                     <Link to={'/register'}>
-                        <span className="text-cyan-500">Create Account</span>
+                        <span className="pl-2 text-cyan-500">Create Account</span>
                     </Link>
                 </p>
             </div>

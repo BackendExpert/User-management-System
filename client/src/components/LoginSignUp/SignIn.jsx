@@ -8,7 +8,7 @@ const SignIn = () => {
 
     const navigate = useNavigate()
 
-    const headleSignUp = (e) =>{
+    const headleLogin = (e) =>{
         e.preventDefault();
 
         axios.post('http://localhost:8081/login', values)
@@ -25,14 +25,16 @@ const SignIn = () => {
                 <p className="text-3xl font-semibold py-4">SignIn</p>
                 <hr className="pb-6" />
 
-                <form>
+                <form onSubmit={headleLogin}>
                     <div className="">
                         <label htmlFor="" className="text-xl py-4">Email : </label>
-                        <input type="email" className="pl-4 border w-full h-12 my-2 rounded text-xl" required placeholder="Email" />
+                        <input type="email" className="pl-4 border w-full h-12 my-2 rounded text-xl" required placeholder="Email" 
+                        onChange={e => SetValues({...values, email: e.target.value})}/>
                     </div>
                     <div className="">
                         <label htmlFor="" className="text-xl py-4">Password : </label>
-                        <input type="password" className="pl-4 border w-full h-12 my-2 rounded text-xl" required placeholder="Password" />
+                        <input type="password" className="pl-4 border w-full h-12 my-2 rounded text-xl" required placeholder="Password" 
+                        onChange={e => SetValues({...values, password: e.target.value})}/>
                     </div>
                     <div className="">
                         <button type="submit" className="w-1/2 rounded-md border border-cyan-500 py-4 my-4 text-xl text-cyan-600 duration-500 hover:bg-cyan-500 hover:text-white">Login</button>

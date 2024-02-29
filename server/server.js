@@ -42,6 +42,13 @@ app.post('/register', (req, res) => {
             createTime,
             updateTime
         ]
+
+        // execution of the query
+        
+        db.query(sql, [values], (err, result) => {
+            if(err) return res.json({Error: "Error While Inserting the data to database"});
+            return res.json({Status: "Success"});
+        })
     })
 
 

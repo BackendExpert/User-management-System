@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import axios from "axios"
 
 const SignUp = () => {
     const [values, SetValues] = useState({
@@ -8,6 +9,13 @@ const SignUp = () => {
         email: '',
         password: ''
     })
+
+    const headleSignUp = (event) => {
+        event.preventDefault();
+        axios.post("http://localhost:8081/register", values)
+        .then(res => console.log(res))
+        .then(err => console.log(err));
+    }
   return (
     <div className="bg-blue-500 w-full h-full">
         <div className="container lg:px-32 py-10 ">
@@ -15,7 +23,7 @@ const SignUp = () => {
                 <p className="text-3xl font-semibold py-4">SignUp</p>
                 <hr className="pb-6" />
 
-                <form>
+                <form onSubmit={headleSignUp}>
                     <div className="">
                         <label htmlFor="" className="text-xl py-4">Username : </label>
                         <input type="text" className="pl-4 border w-full h-12 my-2 rounded text-xl" required placeholder="Username" 

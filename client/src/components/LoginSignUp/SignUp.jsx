@@ -1,6 +1,12 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 
 const SignUp = () => {
+    const [values, SetValues] = useState({
+        name: '',
+        email: '',
+        password: ''
+    })
   return (
     <div className="bg-blue-500 w-full h-full">
         <div className="container lg:px-32 py-10 ">

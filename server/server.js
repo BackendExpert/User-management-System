@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { response } from 'express';
 import mysql from 'mysql'
 import cors from 'cors'
 import jwt from 'jsonwebtoken';
@@ -61,8 +61,24 @@ app.post('/register', (req, res) => {
             }
         });
     })
+})
 
-
+app.post('/login', (req, res) => {
+    const sql = "SELECT * FROM users WHERE email = ?";
+    db.query(sql, [req.body.email], (err, data) =>{
+        if(err) return res.json({Error: "Error in Server"});
+        if(data.length > 0){
+            bcrypt.compare(req.body.password.toString(), data[0].password, (err, response) => {
+                if(err) return res.json({Error: "Error while comparing the Password"})
+                if(response){
+                    return res.json({Status: "Success"});
+                }
+                else{
+                    return res.json({Error: "Password not Match"});
+                }
+            })
+        }
+    })
 })
 
 

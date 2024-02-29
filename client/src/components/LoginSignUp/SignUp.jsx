@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 
 const SignUp = () => {
@@ -10,11 +10,16 @@ const SignUp = () => {
         password: ''
     })
 
+    const navigate = useNavigate()
+
     const headleSignUp = (event) => {
         event.preventDefault();
         axios.post("http://localhost:8081/register", values)
-        .then(res => console.log(res))
-        //.then(err => console.log(err));
+        .than(res => {
+            if(res.data.Status === "Success"){
+                navigate('/');
+            }
+        }).catch(err => console.log(err))
     }
   return (
     <div className="bg-blue-500 w-full h-full">

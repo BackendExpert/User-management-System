@@ -22,6 +22,12 @@ const db = mysql.createConnection({
     database: "db_ums"
 })
 
+db.connect((error) => {
+    if(error) throw error
+    else
+    console.log("Database Connection is Success");
+});
+
 app.post('/register', (req, res) => {
     const sql = "INSERT INTO users(userName, firstName, email, password, role, created_at, update_at) VALUES (?)";
 
@@ -46,11 +52,14 @@ app.post('/register', (req, res) => {
         ]
 
         // execution of the query
-        
         db.query(sql, [values], (err, result) => {
-            if(err) return res.json({Error: "Error While Inserting the data to database"});
-            return res.json({Status: "Success"});
-        })
+            if(err){
+                console.log(err)
+            }
+            else{
+                return res.json({Status: "Success"})
+            }
+        });
     })
 
 

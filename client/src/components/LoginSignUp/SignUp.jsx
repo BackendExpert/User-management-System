@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom"
+
 const SignUp = () => {
   return (
     <div className="bg-blue-500 w-full h-screen">
         <div className="container px-32 py-20 ">
-            <div className="rounded-xl mx-40 p-20 mt-20 bg-white w-full">
+            <div className="rounded-xl mx-40 p-20 mt-16 bg-white w-full">
                 <p className="text-3xl font-semibold py-4">SignUp</p>
                 <hr className="pb-6" />
 
@@ -27,6 +29,11 @@ const SignUp = () => {
                         <button type="submit" className="h-12 w-1/2 rounded-md border border-cyan-500 text-cyan-500 duration-500 hover:bg-cyan-500 hover:text-white">SignUp</button>
                     </div>
                 </form>
+                <p>Already have an Account ? 
+                    <Link to={'/'}>
+                        <span className="pl-2 mt-4 text-cyan-500">SignIn</span>
+                    </Link>
+                </p>
             </div>
         </div>
     </div>

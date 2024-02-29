@@ -20,6 +20,11 @@ const db = mysql.createConnection({
     database: "db_ums"
 })
 
+app.post('/register', (req, res) => {
+    const sql = "INSERT INTO login(`userName','firstName','email','password','created_at','update_at')"
+})
+
+
 // server run
 app.listen(8081, () => {
     console.log("Server Running on Port 8081");

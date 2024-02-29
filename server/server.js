@@ -32,6 +32,8 @@ db.connect((error) => {
     console.log("Database Connection is Success");
 });
 
+
+
 app.post('/register', (req, res) => {
     const sql = "INSERT INTO users(userName, firstName, email, password, role, created_at, update_at) VALUES (?)";
 

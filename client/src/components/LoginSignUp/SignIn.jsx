@@ -9,14 +9,6 @@ const SignIn = () => {
 
                 <form>
                     <div className="">
-                        <label htmlFor="" className="text-xl py-4">Username : </label>
-                        <input type="text" className="pl-4 border w-full h-16 my-2 rounded text-2xl" required placeholder="Username" />
-                    </div>
-                    <div className="">
-                        <label htmlFor="" className="text-xl py-4">First Name : </label>
-                        <input type="text" className="pl-4 border w-full h-16 my-2 rounded text-2xl" required placeholder="First Name" />
-                    </div>
-                    <div className="">
                         <label htmlFor="" className="text-xl py-4">Email : </label>
                         <input type="email" className="pl-4 border w-full h-16 my-2 rounded text-2xl" required placeholder="Email" />
                     </div>

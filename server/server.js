@@ -78,7 +78,8 @@ app.post('/login', (req, res) => {
 
                     //assign jsonwebtoken
                     const name = data[0].username;
-                    const token = jwt.sign({name} , "jwt-secret-key", {expiresIn: '1d'});
+                    const token = jwt.sign({name} , "secret-msg-jwt", {expiresIn: '1d'});
+                    res.cookie('token', token);
                     return res.json({Status: "Success", Result: data});
                 }
                 else{

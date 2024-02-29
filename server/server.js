@@ -71,7 +71,7 @@ app.post('/login', (req, res) => {
             bcrypt.compare(req.body.password.toString(), data[0].password, (err, response) => {
                 if(err) return res.json({Error: "Error while comparing the Password"})
                 if(response){
-                    return res.json({Status: "Success"});
+                    return res.json({Status: "Success", Result: data});
                 }
                 else{
                     return res.json({Error: "Password not Match"});

@@ -9,7 +9,7 @@ const SignIn = () => {
     })
 
     const navigate = useNavigate()
-
+    axios.defaults.withCredentials = true;
     const headleLogin = (e) => {
         e.preventDefault();
 

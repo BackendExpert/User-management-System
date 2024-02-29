@@ -1,6 +1,23 @@
 import { Link } from "react-router-dom"
 
 const SignIn = () => {
+    const [values, SetValues] = useState({
+        email: '',
+        password: ''
+    })
+
+    const navigate = useNavigate()
+
+    const headleSignUp = (e) =>{
+        e.preventDefault();
+
+        axios.post('http://localhost:8081/login', values)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                navigate('/');
+            }
+        }).catch(err => console.log(err))
+    }
   return (
     <div className="bg-blue-500 w-full h-screen">
         <div className="container lg:px-32 py-10 ">

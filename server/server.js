@@ -23,7 +23,7 @@ const db = mysql.createConnection({
 })
 
 app.post('/register', (req, res) => {
-    const sql = "INSERT INTO users(`userName`,`firstName`,`email`,`password`,`created_at`,`update_at`) VALUES (?)";
+    const sql = "INSERT INTO users(`userName`,`firstName`,`email`,`password`,`role`,`created_at`,`update_at`) VALUES (?)";
 
     //hashing the Password
     bcrypt.hash(req.body.password.toString(), salt, (err, hashPass) => {
@@ -32,6 +32,7 @@ app.post('/register', (req, res) => {
         // get the currnt time for add to db
         const createTime = new Date();
         const updateTime = new Date();
+        const defaultUser = 'user';
 
         //set the values
         const values = [
@@ -39,6 +40,7 @@ app.post('/register', (req, res) => {
             req.body.fname,
             req.body.email,
             hashPass,
+            defaultUser,
             createTime,
             updateTime
         ]

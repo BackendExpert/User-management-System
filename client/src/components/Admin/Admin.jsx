@@ -1,9 +1,42 @@
-import { Navigate, Outlet } from "react-router-dom"
+import axios from "axios"
+import { useEffect, useState } from "react"
 
 const Admin = () => {
-    let auth = {'token' : false}
+    const [auth, SetAuth] = useState(false);
+    const [msg, SetMsg] = useState('');
+    const [name, SetName] = useState('');
+
+    useEffect(() => {
+      axios.get('/admin')
+      .then(res => {
+          if(res.data.Status === "Success"){
+            SetAuth(true)
+            SetName(res.data.name)
+            Navigate('/')
+          }
+          else{
+            SetAuth(false)
+            SetMsg(res.data.Error)
+          }
+      })
+      .then(err => console.log(err))
+    })
   return (
-        auth.token ? <Outlet/> : <Navigate to={'/'} />
+      <div className="">
+        {
+          auth ? 
+          <div className="">
+            Your Are Login {name}
+            <button>Logout</button>
+          </div>
+
+          :
+
+          <div className="">
+            asdasdas
+          </div>
+        }
+      </div>
     )
 }
 

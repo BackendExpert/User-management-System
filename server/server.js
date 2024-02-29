@@ -24,21 +24,27 @@ const db = mysql.createConnection({
 
 app.post('/register', (req, res) => {
     const sql = "INSERT INTO login(`userName`,`firstName`,`email`,`password`,`created_at`,`update_at`) VALUES (?)";
-    const createTime = new Date();
-    const updateTime = new Date();
 
-    bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
+    //hashing the Password
+    bcrypt.hash(req.body.password.toString(), salt, (err, hashPass) => {
         if(err) return res.json({Error: "ERROR While hashing the Password"});
+
+        // get the currnt time for add to db
+        const createTime = new Date();
+        const updateTime = new Date();
+
+        //set the values
+        const values = [
+            req.body.username,
+            req.body.fname,
+            req.body.email,
+            hashPass,
+            createTime,
+            updateTime
+        ]
     })
 
-    const values = [
-        req.body.username,
-        req.body.fname,
-        req.body.email,
-        req.body.password,
-        createTime,
-        updateTime
-    ]
+
 })
 
 

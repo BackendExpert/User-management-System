@@ -77,6 +77,10 @@ app.post('/login', (req, res) => {
                     return res.json({Error: "Password not Match"});
                 }
             })
+            
+        }
+        else{
+            return res.json({Error: "Email not Existed"})
         }
     })
 })

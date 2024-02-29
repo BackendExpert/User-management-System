@@ -9,7 +9,7 @@ const Admin = () => {
     axios.defaults.withCredentials = true;
 
     useEffect(() => {
-      axios.get('/admin')
+      axios.get('http://localhost:8081/admin')
       .then(res => {
           if(res.data.Status === "Success"){
             SetAuth(true)

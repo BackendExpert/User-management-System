@@ -71,6 +71,10 @@ app.post('/login', (req, res) => {
             bcrypt.compare(req.body.password.toString(), data[0].password, (err, response) => {
                 if(err) return res.json({Error: "Error while comparing the Password"})
                 if(response){
+
+                    //assign jsonwebtoken
+                    const name = data[0].username;
+                    const token = jwt.sign({name} , "jwt-secret-key", {expiresIn: '1d'});
                     return res.json({Status: "Success", Result: data});
                 }
                 else{

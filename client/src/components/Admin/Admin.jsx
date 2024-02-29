@@ -6,6 +6,8 @@ const Admin = () => {
     const [msg, SetMsg] = useState('');
     const [name, SetName] = useState('');
 
+    axios.defaults.withCredentials = true;
+
     useEffect(() => {
       axios.get('/admin')
       .then(res => {

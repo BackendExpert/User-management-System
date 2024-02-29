@@ -27,6 +27,10 @@ app.post('/register', (req, res) => {
     const createTime = new Date();
     const updateTime = new Date();
 
+    bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
+        if(err) return res.json({Error: "ERROR While hashing the Password"});
+    })
+
     const values = [
         req.body.username,
         req.body.fname,

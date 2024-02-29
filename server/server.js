@@ -1,7 +1,7 @@
 import express, { response } from 'express';
 import mysql from 'mysql'
 import cors from 'cors'
-import jwt from 'jsonwebtoken';
+import jwt, { verify } from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import cookieParser from 'cookie-parser';
 const salt = 10;
@@ -32,7 +32,13 @@ db.connect((error) => {
     console.log("Database Connection is Success");
 });
 
+const verifyUser = (req, res, next) => {
+    
+}
 
+app.get('/admin', verifyUser = (req, res) => {
+
+})
 
 app.post('/register', (req, res) => {
     const sql = "INSERT INTO users(userName, firstName, email, password, role, created_at, update_at) VALUES (?)";

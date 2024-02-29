@@ -23,6 +23,9 @@ const SignUp = () => {
                         <label htmlFor="" className="text-xl py-4">Password : </label>
                         <input type="password" className="pl-4 border w-full h-16 my-2 rounded text-2xl" required placeholder="Password" />
                     </div>
+                    <div className="">
+                        <button type="submit" className="h-12 w-1/2 rounded-md border border-cyan-500 text-cyan-500 duration-500 hover:bg-cyan-500 hover:text-white">SignUp</button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -1,7 +1,7 @@
 import express, { response } from 'express';
 import mysql from 'mysql'
 import cors from 'cors'
-import jwt, { verify } from 'jsonwebtoken';
+import jwt, { decode, verify } from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import cookieParser from 'cookie-parser';
 const salt = 10;
@@ -33,7 +33,21 @@ db.connect((error) => {
 });
 
 const verifyUser = (req, res, next) => {
-    
+    const token = req.cookie.token;
+    if(!token){
+        return res.json({Error: "You not Auth"});
+    }
+    else{
+        jwt.verify(token, "secret-msg-jwt", (err, decoded) => {
+            if(err){
+                res.json({Error: "Token X"});
+            }
+            else{
+                req.name = decoded.name;
+                next();
+            }
+        })
+    }
 }
 
 app.get('/admin', verifyUser = (req, res) => {

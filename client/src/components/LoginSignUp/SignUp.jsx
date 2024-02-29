@@ -12,10 +12,11 @@ const SignUp = () => {
 
     const navigate = useNavigate()
 
-    const headleSignUp = (event) => {
-        event.preventDefault();
-        axios.post("http://localhost:8081/register", values)
-        .than(res => {
+    const headleSignUp = (e) =>{
+        e.preventDefault();
+
+        axios.post('http://localhost:8081/register', values)
+        .then(res => {
             if(res.data.Status === "Success"){
                 navigate('/');
             }

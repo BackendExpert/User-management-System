@@ -1,7 +1,7 @@
 import express, { response } from 'express';
 import mysql from 'mysql'
 import cors from 'cors'
-import jwt, { decode, verify } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import cookieParser from 'cookie-parser';
 const salt = 10;
@@ -33,7 +33,7 @@ db.connect((error) => {
 });
 
 const verifyUser = (req, res, next) => {
-    const token = req.cookie.token;
+    const token = req.cookies.token;
     if(!token){
         return res.json({Error: "You not Auth"});
     }
@@ -50,7 +50,7 @@ const verifyUser = (req, res, next) => {
     }
 }
 
-app.get('/admin', verifyUser = (req, res) => {
+app.get('/admin', verifyUser, (req, res) => {
     return res.json({Status: "Success", name: req.name});
 })
 

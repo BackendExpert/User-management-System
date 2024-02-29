@@ -16,7 +16,12 @@ const SignIn = () => {
         axios.post('http://localhost:8081/login', values)
         .then(res => {
             if(res.data.Status === "Success"){
-               if(res.data.)
+               if(res.data.Result[0].role === 'admin'){
+                    navigate('/admin')
+               }
+               else if(res.data.Result[0].role === 'user'){
+                    navigate('/user')
+               }
             } else{
                 alert("ERROR...!");
             }

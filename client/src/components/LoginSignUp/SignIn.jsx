@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 const SignIn = () => {
   return (
@@ -20,6 +21,12 @@ const SignIn = () => {
                         <button type="submit" className="w-1/2 rounded-md border border-cyan-500 py-4 my-4 text-xl text-cyan-600 duration-500 hover:bg-cyan-500 hover:text-white">Login</button>
                     </div>
                 </form>
+
+                <p>Dont have an Account ? 
+                    <Link to={'/register'}>
+                        Create Account
+                    </Link>
+                </p>
             </div>
         </div>
     </div>

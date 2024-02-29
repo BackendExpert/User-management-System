@@ -24,7 +24,7 @@ const SignIn = () => {
 
                 <p>Dont have an Account ? 
                     <Link to={'/register'}>
-                        Create Account
+                        <span className="text-cyan-500">Create Account</span>
                     </Link>
                 </p>
             </div>

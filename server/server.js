@@ -4,6 +4,8 @@ import cors from 'cors'
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import cookieParser from 'cookie-parser';
+const salt = 10;
+
 
 const app = express();
 app.use(express.json());
@@ -24,7 +26,7 @@ app.post('/register', (req, res) => {
     const sql = "INSERT INTO login(`userName`,`firstName`,`email`,`password`,`created_at`,`update_at`) VALUES (?)";
     const createTime = new Date();
     const updateTime = new Date();
-    
+
     const values = [
         req.body.username,
         req.body.fname,

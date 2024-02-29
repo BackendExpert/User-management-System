@@ -1,10 +1,12 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Admin = () => {
     const [auth, SetAuth] = useState(false);
     const [msg, SetMsg] = useState('');
     const [name, SetName] = useState('');
+    const navigate = useNavigate();
 
     axios.defaults.withCredentials = true;
 
@@ -14,7 +16,6 @@ const Admin = () => {
           if(res.data.Status === "Success"){
             SetAuth(true)
             SetName(res.data.name)
-            Navigate('/')
           }
           else{
             SetAuth(false)
@@ -34,9 +35,8 @@ const Admin = () => {
 
           :
 
-          <div className="">
-            asdasdas
-          </div>
+            navigate('/')
+          
         }
       </div>
     )

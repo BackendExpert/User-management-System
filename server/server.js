@@ -23,7 +23,7 @@ const db = mysql.createConnection({
 })
 
 app.post('/register', (req, res) => {
-    const sql = "INSERT INTO login(`userName`,`firstName`,`email`,`password`,`created_at`,`update_at`) VALUES (?)";
+    const sql = "INSERT INTO users(`userName`,`firstName`,`email`,`password`,`created_at`,`update_at`) VALUES (?)";
 
     //hashing the Password
     bcrypt.hash(req.body.password.toString(), salt, (err, hashPass) => {

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom"
 
 const SignUp = () => {
     const [values, SetValues] = useState({
-        name: '',
+        username: '',
+        fname: '',
         email: '',
         password: ''
     })

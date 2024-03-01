@@ -1,6 +1,6 @@
 // import IonIcons from "@reacticons/ionicons"
 
-const LinksAdmin = [
+const AdminLinks = [
     {name: "Users", link: "#", icon: "asd"},
     {name: "Admin", link: "#", icon: "asda"},
     {name: "Users", link: "#", icon: "asdas"},
@@ -8,4 +8,4 @@ const LinksAdmin = [
     {name: "Logout", link: "#", icon: "asd"},    
 ]
 
-export default LinksAdmin;
+export default AdminLinks;

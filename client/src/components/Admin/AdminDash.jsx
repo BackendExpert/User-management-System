@@ -1,17 +1,17 @@
-import LinksAdmin from "./AdminLinks"
+/* eslint-disable react/jsx-key */
+import LinksAdmin from "./AdminLinks";
 
 const AdminDash = () => {
   return (
     <div>
-        {
-          LinksAdmin.map((Link) => (
-            <div className="">
-              <div className="">{Link.name}</div>
-            </div>
-          ))
-        }
+      {
+        LinksAdmin.map((linkAdmin) => (
+          <p className="">{linkAdmin.name}</p>
+        ))
+      }
     </div>
   )
 }
 
 export default AdminDash
+

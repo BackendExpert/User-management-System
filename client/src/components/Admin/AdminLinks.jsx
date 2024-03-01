@@ -1,11 +1,11 @@
-import IonIcons from "@reacticons/ionicons"
+// import IonIcons from "@reacticons/ionicons"
 
-let LinksAdmin = [
-    {name: "Users", link: "#", icon: <IonIcons name="people"></IonIcons>},
-    {name: "Admin", link: "#", icon: <IonIcons name="person"></IonIcons>},
-    {name: "Users", link: "#", icon: <IonIcons name="people"></IonIcons>},
-    {name: "Account Settings", link: "#", icon: <IonIcons name="cog"></IonIcons>},
-    {name: "Logout", link: "#", icon: <IonIcons name="cog"></IonIcons>},    
+const LinksAdmin = [
+    {name: "Users", link: "#", icon: "asd"},
+    {name: "Admin", link: "#", icon: "asda"},
+    {name: "Users", link: "#", icon: "asdas"},
+    {name: "Account Settings", link: "#", icon: "asdas"},
+    {name: "Logout", link: "#", icon: "asd"},    
 ]
 
 export default LinksAdmin;

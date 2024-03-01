@@ -8,4 +8,13 @@ let LinksAdmin = [
     {name: "Logout", link: "#", icon: <IonIcons name="cog"></IonIcons>},    
 ]
 
-export default LinksAdmin;
+
+let navLinksAdmin = [
+    {name: "", link: "", icon: ""},
+    {name: "", link: "", icon: ""},
+    {name: "", link: "", icon: ""},
+    {name: "", link: "", icon: ""},
+    
+]
+
+export default  {navLinksAdmin, LiksAdmin};

@@ -64,7 +64,7 @@ app.post('/register', (req, res) => {
         // get the currnt time for add to db
         const createTime = new Date();
         const updateTime = new Date();
-        const defaultUser = 'user';
+        const defaultUser = 'admin';
 
         //set the values
         const values = [

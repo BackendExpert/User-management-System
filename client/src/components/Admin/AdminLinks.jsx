@@ -1,7 +1,6 @@
 import IonIcons from "@reacticons/ionicons"
 
-
-let LinkAdmin = [
+let LinksAdmin = [
     {name: "Users", link: "#", icon: <IonIcons name="people"></IonIcons>},
     {name: "Admin", link: "#", icon: <IonIcons name="person"></IonIcons>},
     {name: "Users", link: "#", icon: <IonIcons name="people"></IonIcons>},
@@ -9,4 +8,4 @@ let LinkAdmin = [
     {name: "Logout", link: "#", icon: <IonIcons name="cog"></IonIcons>},    
 ]
 
-export default LinkAdmin;
+export default LinksAdmin;

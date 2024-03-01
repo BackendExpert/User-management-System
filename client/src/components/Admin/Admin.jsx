@@ -17,6 +17,7 @@ const Admin = () => {
           if(res.data.Status === "Success"){
             SetAuth(true)
             SetName(res.data.name)
+            navigate('/')
           }
           else{
             SetAuth(false)

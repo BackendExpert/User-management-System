@@ -3,7 +3,6 @@ import SignIn from "./components/LoginSignUp/SignIn";
 import SignUp from "./components/LoginSignUp/SignUp";
 import Admin from "./components/Admin/Admin";
 import Users from "./components/Users/Users";
-import AdminDash from "./components/Admin/AdminDash";
 
 
 export default function App() {
@@ -14,7 +13,7 @@ export default function App() {
         <Route path="/register" element={<SignUp />} ></Route>
         <Route path="/admin" element={<Admin />} ></Route>
         <Route path="/user" element={<Users />} ></Route>
-        <Route path="/adminDash" element={<AdminDash />} ></Route>
+
       </Routes>
     </BrowserRouter>
   )

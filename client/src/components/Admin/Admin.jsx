@@ -16,12 +16,12 @@ const Admin = () => {
       .then(res => {
           if(res.data.Status === "Success"){
             SetAuth(true)
-            SetName(res.data.name)
-            navigate('/')
+            SetName(res.data.name)            
           }
           else{
             SetAuth(false)
             SetMsg(res.data.Error)
+            navigate('/')
           }
       })
       .then(err => console.log(err))
